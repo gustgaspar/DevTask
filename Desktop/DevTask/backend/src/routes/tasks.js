@@ -6,5 +6,7 @@ router.get('/', tasksControllers.getAllTasks)
 
 router.post('/', tasksControllers.createTask)
 
+router.put('/:id', tasksControllers.updateTask)
+
 
 module.exports = router
