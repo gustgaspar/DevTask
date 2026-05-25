@@ -36,6 +36,19 @@ const updateTask = (req, res) => {
     res.json(task)
 }
 
+const deleteTask = (req, res) => {
+    const id = parseInt(req.params.id)
+    const task = tasks.find(task => task.id === id)
+    if (!task) {
+        return res.status(404).json({erro: "Tarefa não encontrada"})
+    }
+
+    const indiceTask = tasks.findIndex(indice => indice.id === id)
+
+    //deletando do array
+    tasks.splice(indiceTask, 1)
+    return res.status(204).send()
+}
 
 
 
@@ -43,5 +56,6 @@ const updateTask = (req, res) => {
 module.exports = {
     getAllTasks,
     createTask,
-    updateTask
+    updateTask,
+    deleteTask,
 }

@@ -8,5 +8,6 @@ router.post('/', tasksControllers.createTask)
 
 router.put('/:id', tasksControllers.updateTask)
 
+router.delete('/:id', tasksControllers.deleteTask)
 
 module.exports = router
