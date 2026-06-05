@@ -1,4 +1,5 @@
 import { useState, useEffect} from "react"
+import TaskCard from "../components/TaskCard"
 
 
 function TasksPage() {
@@ -24,9 +25,9 @@ function TasksPage() {
         <h1>Títulos das tarefas:</h1>
 
         {tasks.map((Titulo) => (
-            <p key={Titulo.id}>
-                {Titulo.title}
-            </p>
+            <TaskCard key={Titulo.id}
+                task={Titulo}
+            />
         ))}
         </div>
     
